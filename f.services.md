@@ -211,6 +211,8 @@ kubectl delete deploy foo
 
 ### Create an nginx deployment of 2 replicas, expose it via a ClusterIP service on port 80. Create a NetworkPolicy so that only pods with labels 'access: granted' can access the deployment and apply it
 
+#### Make sure you've configured a network provider with network policy support. There are a number of network providers that support NetworkPolicy, including: Calico, Cilium, kube-router, Romana, Wave Net. If you have Flannel (It does not support NetPolicy) could try to deploy the object without errors but the service remains accesible from another pod
+
 kubernetes.io > Documentation > Concepts > Services, Load Balancing, and Networking > [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 
 <details><summary>show</summary>
